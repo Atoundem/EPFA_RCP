@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="org.icipe.epfa.project.category1"
+            name="EPFA&apos;s views">
+      </category>
+      <view
+            category="org.icipe.epfa.project.category1"
+            class="org.icipe.epfa.project.windows.ViewProjectsUI"
+            icon="icons/folder_2.png"
+            id="org.icipe.epfa.project.view1"
+            name="EPFA&apos;s Project Explorer"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.icipe.epfa.project.category1"
+            name="EPFA Project">
+      </category>
+      <wizard
+            category="org.icipe.epfa.project.category1"
+            class="org.icipe.epfa.project.wizards.NewProjectWizard"
+            icon="icons/EPFA16.png"
+            id="org.icipe.epfa.project.wizard1"
+            name="EPFA Project">
+      </wizard>
+   </extension>
+
+</plugin>

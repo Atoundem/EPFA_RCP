@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="org.icipe.epfa.modelDesigner.actionSetModelDesign"
+            label="Model Design">
+         <menu
+               id="modelMenu"
+               label="Model Designer">
+         </menu>
+         <action
+               class="org.icipe.epfa.modeldesigner.ActionEPFVirulence"
+               icon="icons/Mortality-16.png"
+               id="org.icipe.epfa.modelDesigner.action1"
+               label="EPF Virulence"
+               menubarPath="modelMenu/additions"
+               style="push"
+               toolbarPath="window/addition"
+               tooltip="EPF Virulence">
+         </action>
+         <action
+               class="org.icipe.epfa.modeldesigner.ActionLoadPlotData"
+               icon="icons/loadPlot-16.png"
+               id="org.icipe.epfa.modelDesigner.action2"
+               label="Load&amp;Plot Data"
+               menubarPath="modelMenu/additions"
+               style="push"
+               toolbarPath="window/addition"
+               tooltip="Load Plot Data">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

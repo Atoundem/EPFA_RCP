@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="EPFA" uid="230418" id="org.icipe.epfa.EPFA" application="org.icipe.epfa.id1" version="1.0.0" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="/org.icipe.epfa/nl/en/about.gif"/>
+      <text>
+         EPFA software
+
+Version: 1.0
+
+(c) International Center of Insect Physilogy and Ecology.  All rights reserved.
+Visit http://www.icipe.org/
+
+This product was founded by  the Volkswagen Foundation under the funding initiative Knowledge for Tomorrow - Cooperative Research Projects in Sub-Saharan on Resources, their Dynamics, and Sustainability – Capacity Development in Comparative and Integrated Approaches. 
+The authors thank the Federal Ministry for Economic Cooperation and Development (BMZ), Germany that provided the financial support through Tuta IPM project, the German Academic Exchange Service (DAAD) and the STRIVE project funded by the German Federal Ministry of Education and Research.
+
+EPFA software site http://www.softwareSite.org
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-Dosgi.parentClassloader=ext
+-Xmx1024m</programArgs>
+      <vmArgs>-Dosgi.requiredJavaVersion=1.6 -Dosgi.parentClassloader=ext
+-XX:MaxPermSize=512m -Xss2m -XX:+UseParallelOldGC -XX:PermSize=512m
+-Xms256m -Xmx1024m -Dorg.eclipse.emf.ecore.plugin.EcorePlugin.doNotLoadResourcesPlugin=true</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+-Djava.awt.headless=true</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/org.icipe.epfa/icons/EPFA16.gif" i32="/org.icipe.epfa/icons/EPFA32.gif" i48="/org.icipe.epfa/icons/EPFA48.gif" i64="/org.icipe.epfa/icons/EPFA64.gif" i128="/org.icipe.epfa/icons/EPFA128.gif"/>
+
+   <splash
+      location="org.icipe.epfa"
+      startupProgressRect="0,271,500,25"
+      startupMessageRect="7,245,450,30"
+      startupForegroundColor="FFFFFF" />
+   <launcher name="EPFA">
+      <solaris/>
+      <win useIco="true">
+         <ico path="/org.icipe.epfa/icons/EPFAico.ico"/>
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+      <windows include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6</windows>
+   </vm>
+
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="net.refractions.udig_application-feature" version="1.4.0.201303261513"/>
+      <feature id="net.refractions.udig_printing-feature" version="1.4.0.201303261513"/>
+      <feature id="net.refractions.udig_platform-feature" version="1.4.0.201303261513"/>
+      <feature id="net.refractions.udig_base-feature" version="1.4.0.201303261513"/>
+      <feature id="net.refractions.udig_language-feature" version="1.4.0.201303261513"/>
+      <feature id="org.icipe.epfa_feature"/>
+      <feature id="org.eclipse.equinox.executable" version="3.5.1.v20111216-1653-7P7NFUIFIbaUcU77s0KQWHw5HZTZ"/>
+      <feature id="org.icipe.epfa.modelDesigner.mortality_feature"/>
+      <feature id="net.refractions.udig-feature" version="1.4.0.201303261513"/>
+      <feature id="org.icipe.epfa.mapping_feature"/>
+   </features>
+
+   <configurations>
+      <property name="osgi.instance.area.default" value="@user.home/workspace" />
+   </configurations>
+
+</product>
