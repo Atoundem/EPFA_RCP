@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="org.icipe.epfa.connectionToR.actionSet2"
+            label="Rserve connection"
+            visible="true">
+         <action
+               class="org.icipe.epfa.connectiontor.Launch"
+               icon="icons/r-20.png"
+               id="org.eclipse.epfa.connectionToR.action1"
+               label="Install Tools"
+               style="push"
+               toolbarPath="save.group">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

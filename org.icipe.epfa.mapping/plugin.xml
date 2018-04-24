@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="org.icipe.epfa.mapping.actionSetMappingTask"
+            label="Mapping Tasks">
+         <menu
+               id="mappingMenu"
+               label="Mapping Operations">
+         </menu>
+         <action
+               class="org.icipe.epfa.mapping.ActionGenerateMap"
+               icon="icons/mapping-16.png"
+               id="org.icipe.epfa.mapping.action1"
+               label="Generate Maps"
+               menubarPath="mappingMenu/additions"
+               style="push"
+               toolbarPath="window/addition"
+               tooltip="Generate the maps">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

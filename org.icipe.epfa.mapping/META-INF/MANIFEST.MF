@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mapping
+Bundle-SymbolicName: org.icipe.epfa.mapping;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Activator: org.icipe.epfa.mapping.Activator
+Bundle-Vendor: ICIPE
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.icipe.epfa.connectionToR;bundle-version="1.0.0",
+ org.icipe.epfa.project;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
