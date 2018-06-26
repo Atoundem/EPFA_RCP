@@ -35,7 +35,7 @@ import org.rosuda.REngine.REXPMismatchException;
 import org.rosuda.REngine.Rserve.RConnection;
 import org.rosuda.REngine.Rserve.RserveException;
 
-public class DevelopmentRate {
+public class EpfaVirulence {
 	
 	public static String[] lstArrayNames = new String[]{"Anlytis", "Briere", "Deva", "Hilbert & Logan", "Janish", "Kontodimas", "Lactin",
 		"Logan", "Rawtosky", "SharpeDeMichelle", "Stinner", "Beta", "Lorentzian","Agricultural model", "Other models"};
@@ -173,7 +173,7 @@ public class DevelopmentRate {
 			saveToR += "source("+'"' + lib + "/dev_rate_new.r"+'"'+")" + "\r\n";
 			c.eval("source("+'"' + lib + "/dev_rate_new.r"+'"'+")");
 			
-			String strwd = (MainActionRate.pathProj + File.separator + "Data").replace('\\', '/');
+			String strwd = (MainActionEPFMort.pathProj + File.separator + "Data").replace('\\', '/');
 			
 			saveToR+= "setwd(" + '"' + strwd + '"'+ ')'+"\r\n";
 			c.eval("setwd(" + '"' + strwd + '"'+ ')');
@@ -184,7 +184,7 @@ public class DevelopmentRate {
 			saveToR+= "library(MASS)"+"\r\n";
 			c.eval("library(MASS)");
 			
-			String pathProject = MainActionRate.pathProj + File.separator + "DevelopmentTime" + File.separator + MainPageWizardPage.getStageSel();
+			String pathProject = MainActionEPFMort.pathProj + File.separator + "DevelopmentTime" + File.separator + MainPageWizardPage.getStageSel();
 			pathProject = pathProject.replace("\\", "/");
 			saveToR+="load(" + '"' + pathProject + "/toTemp.RData" + '"' +")"+"\r\n";
 			c.eval("load(" + '"' + pathProject + "/toTemp.RData" + '"' +")");
@@ -457,8 +457,11 @@ public class DevelopmentRate {
 				
 				EPFAUtils.createTempScriptFile("/RScripts/mortalityDesigner_New.r");
 				
-		        saveToR += "source('"+MainPageWizardPage.getstrMortalityPath()+"/tempScripFile.r'"+")"+"\r\n";	
-		        c.eval("source('"+MainPageWizardPage.getstrMortalityPath()+"/tempScripFile.r'"+")");
+				 saveToR += "source('"+ (ViewProjectsUI.getPathProject()+ File.separator).replace('\\','/')+"tempScripFile.r'"+")"+"\r\n";
+		         c.eval("source('"+(ViewProjectsUI.getPathProject()+ File.separator).replace('\\','/')+"tempScripFile.r'"+")");
+		        
+//		        saveToR += "source('"+MainPageWizardPage.getstrMortalityPath()+"/tempScripFile.r'"+")"+"\r\n";	
+//		        c.eval("source('"+MainPageWizardPage.getstrMortalityPath()+"/tempScripFile.r'"+")");
 		        System.out.println("charger again");
 		        charge = true;
 			}
@@ -1044,7 +1047,7 @@ public class DevelopmentRate {
 /*	
 	/** guarda el archivo resume con el modelo y parametros seleccionados **
 	private static void guardarResume(){
-		File fResume = new File(MainActionRate.pathProj + File.separator + title + File.separator +"resume.ilcym");//verificar ruta
+		File fResume = new File(MainActionEPFMort.pathProj + File.separator + title + File.separator +"resume.ilcym");//verificar ruta
 		String numStages=ViewProjectsUI.getNumStage(MainPageWizardPage.getStageSel());
 		
 		String tempar="", std="";
@@ -1112,7 +1115,7 @@ public class DevelopmentRate {
 	
 	/** guarda el proceso completado en el archivo progress **/
 	private static void newSaveProgress(){
-		File fileProg = new File(MainActionRate.pathProj + File.separator + "Progress.ilcym");
+		File fileProg = new File(MainActionEPFMort.pathProj + File.separator + "Progress.ilcym");
 		try {
 			
 			BufferedReader in = new BufferedReader(new FileReader(fileProg));

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.6"?>
 
-<target name="Target1" sequenceNumber="68">
+<target name="Target1" sequenceNumber="71">
 <locations>
-<location path="E:\EclipseRCP\EPFAWorkspaceTest\Target\eclipse" type="Profile"/>
 <location path="${eclipse_home}" type="Directory"/>
+<location path="E:\EclipseRCP\EPFAWorkspaceTest\Target\eclipse" type="Profile"/>
 <location path="E:\EclipseRCP\EPFAWorkspaceTest\Target\udig_sdk" type="Profile"/>
 </locations>
 <launcherArgs>
-<vmArgs>-Dosgi.requiredJavaVersion=1.6 -Dosgi.parentClassloader=ext&#13;
--XX:MaxPermSize=1000m -Xss2m -XX:+UseParallelOldGC -XX:PermSize=512m -XX:MaxPermSize=512m&#13;
--Xms256m -Xmx1024m</vmArgs>
+<vmArgs>-Dosgi.requiredJavaVersion=1.6 -Xms128m -Xmx512m -Dosgi.parentClassloader=ext&#13;
+ -XX:MaxPermSize=1000m -Xss2m -XX:+UseParallelOldGC -XX:PermSize=512m&#13;
+-XX:MaxPermSize=512m</vmArgs>
 </launcherArgs>
 </target>

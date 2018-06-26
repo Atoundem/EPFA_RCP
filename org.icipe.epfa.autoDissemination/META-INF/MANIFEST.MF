@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AutoDissemination
+Bundle-SymbolicName: org.icipe.epfa.autoDissemination;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.icipe.epfa.autodissemination.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.icipe.epfa.connectionToR;bundle-version="1.0.0",
+ org.icipe.epfa.project;bundle-version="1.0.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Export-Package: org.icipe.epfa.autodissemination.wizards

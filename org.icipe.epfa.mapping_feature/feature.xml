@@ -2,7 +2,7 @@
 <feature
       id="org.icipe.epfa.mapping_feature"
       label="Mapping_feature"
-      version="1.0.0"
+      version="1.0.0.qualifier"
       provider-name="Icipe">
 
    <description url="http://www.example.com/description">

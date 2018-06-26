@@ -287,20 +287,20 @@ public class ModifyImageUI extends Dialog {
 				c.eval("grises=FALSE");
 			
 			if(MainPageWizardPage.getSeveralModels())
-				DevelopmentRate.estimateParameters(c,model, true, false, "", "", "", "", "", "", "");
+				EpfaVirulence.estimateParameters(c,model, true, false, "", "", "", "", "", "", "");
 			else{
 				String str1,str2,str3,str4,str5,str6,str7;
-				str1 = DevelopmentRate.pars.getParameters()[0];
-				str2 = DevelopmentRate.pars.getParameters()[1];
-				str3 = DevelopmentRate.pars.getParameters()[2];
-				str4 = DevelopmentRate.pars.getParameters()[3];
-				str5 = DevelopmentRate.pars.getParameters()[4];
-				str6 = DevelopmentRate.pars.getParameters()[5];
-				str7 = DevelopmentRate.pars.getParameters()[6];
-				DevelopmentRate.estimateParameters(c,model, false, true, str1, str2, str3, str4, str5, str6, str7);
+				str1 = EpfaVirulence.pars.getParameters()[0];
+				str2 = EpfaVirulence.pars.getParameters()[1];
+				str3 = EpfaVirulence.pars.getParameters()[2];
+				str4 = EpfaVirulence.pars.getParameters()[3];
+				str5 = EpfaVirulence.pars.getParameters()[4];
+				str6 = EpfaVirulence.pars.getParameters()[5];
+				str7 = EpfaVirulence.pars.getParameters()[6];
+				EpfaVirulence.estimateParameters(c,model, false, true, str1, str2, str3, str4, str5, str6, str7);
 			}
 						
-			c.eval("shapprueba<-prueba(model,datashap,datao,ini,corrx,corry,punt="+DevelopmentRate.strMinP+":" + DevelopmentRate.strMaxP + ",labx, laby, titulo)");
+			c.eval("shapprueba<-prueba(model,datashap,datao,ini,corrx,corry,punt="+EpfaVirulence.strMinP+":" + EpfaVirulence.strMaxP + ",labx, laby, titulo)");
 			c.eval("ini<-shapprueba$ini");
 			c.eval("coefi<-shapprueba$coefi");
 			c.eval("p<-shapprueba$p");

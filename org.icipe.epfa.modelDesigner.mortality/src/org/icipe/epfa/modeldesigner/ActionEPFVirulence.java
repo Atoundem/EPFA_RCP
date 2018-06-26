@@ -10,7 +10,7 @@ public class ActionEPFVirulence implements IWorkbenchWindowActionDelegate {
 	@Override
 	public void run(IAction action) {
 		
-		MainActionRate.launchWizard();		
+		MainActionEPFMort.launchWizard();		
 
 	}
 

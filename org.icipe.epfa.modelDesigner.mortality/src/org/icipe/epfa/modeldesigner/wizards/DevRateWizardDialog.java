@@ -1,6 +1,6 @@
 package org.icipe.epfa.modeldesigner.wizards;
 
-import org.icipe.epfa.modeldesigner.DevelopmentRate;
+import org.icipe.epfa.modeldesigner.EpfaVirulence;
 import org.eclipse.jface.wizard.Wizard;
 
 public class DevRateWizardDialog extends Wizard {
@@ -20,7 +20,7 @@ public class DevRateWizardDialog extends Wizard {
 
 	@Override
 	public boolean performFinish() {
-		if(DevelopmentRate.saveModelSelected())
+		if(EpfaVirulence.saveModelSelected())
 			return true;
 		else
 			return false;

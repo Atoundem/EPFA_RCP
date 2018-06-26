@@ -15,7 +15,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.widgets.Shell;
 
-public class MainActionRate {
+public class MainActionEPFMort {
 	
 	public static String nameProject, pathProj;
 	

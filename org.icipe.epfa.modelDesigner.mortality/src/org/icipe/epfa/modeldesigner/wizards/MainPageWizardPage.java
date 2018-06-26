@@ -28,7 +28,7 @@ import org.eclipse.wb.swt.ResourceManager;
 import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Combo;
-import org.icipe.epfa.modeldesigner.DevelopmentRate;
+import org.icipe.epfa.modeldesigner.EpfaVirulence;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -36,7 +36,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Properties;
 
-import org.icipe.epfa.modeldesigner.MainActionRate;
+import org.icipe.epfa.modeldesigner.MainActionEPFMort;
 import org.icipe.epfa.project.windows.ViewProjectsUI;
 import org.icipe.epfa.classUtils.ArrayConvertions;
 
@@ -210,7 +210,7 @@ public class MainPageWizardPage extends WizardPage {
 		lstSelectedModels.setLayoutData(fd_lstSelectedModels);
 		
 		Button rbSelectAllModels = new Button(container, SWT.PUSH);
-		rbSelectAllModels.setText("Select all " + DevelopmentRate.lstModelNames[0].length + " models");
+		rbSelectAllModels.setText("Select all " + EpfaVirulence.lstModelNames[0].length + " models");
 		rbSelectAllModels.setFont(SWTResourceManager.getFont("Comic Sans MS", 10, SWT.NORMAL));
 		FormData fd_rbSelectAllModels = new FormData();
 		fd_rbSelectAllModels.left = new FormAttachment(lstSelectedModels, 5, SWT.RIGHT);
@@ -286,16 +286,16 @@ public class MainPageWizardPage extends WizardPage {
 		comboSelectAlgo.setLayoutData(fd_comboSelectAlgo);
 		comboSelectAlgo.select(0);
 		
-		for(int i=0; i<DevelopmentRate.lstArrayNames.length; i++){
-			lstModels.add(DevelopmentRate.lstArrayNames[i]);
+		for(int i=0; i<EpfaVirulence.lstArrayNames.length; i++){
+			lstModels.add(EpfaVirulence.lstArrayNames[i]);
 		}
 		
 		rbSelectAllModels.addSelectionListener(new SelectionAdapter() {
 	    	@Override
 	    	public void widgetSelected(SelectionEvent e) {
 	    		lstSelectedModels.removeAll();
-	    		for(int i=0; i<DevelopmentRate.lstModelNames[0].length; i++){
-	    			lstSelectedModels.add(DevelopmentRate.lstModelNames[0][i]);
+	    		for(int i=0; i<EpfaVirulence.lstModelNames[0].length; i++){
+	    			lstSelectedModels.add(EpfaVirulence.lstModelNames[0][i]);
 	    		}
 	    	}
 	    });
@@ -317,9 +317,9 @@ public class MainPageWizardPage extends WizardPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				tableSubModels.removeAll();
-				for(int i=0; i<DevelopmentRate.lstMatrixSubNames[lstModels.getSelectionIndex()].length; i++){
+				for(int i=0; i<EpfaVirulence.lstMatrixSubNames[lstModels.getSelectionIndex()].length; i++){
 					TableItem it = new TableItem(tableSubModels, SWT.NONE);
-					it.setText(new String[]{DevelopmentRate.getModelNumber(DevelopmentRate.lstMatrixSubNames[lstModels.getSelectionIndex()][i])+"",DevelopmentRate.lstMatrixSubNames[lstModels.getSelectionIndex()][i]});
+					it.setText(new String[]{EpfaVirulence.getModelNumber(EpfaVirulence.lstMatrixSubNames[lstModels.getSelectionIndex()][i])+"",EpfaVirulence.lstMatrixSubNames[lstModels.getSelectionIndex()][i]});
 				}
 			}
 		});
@@ -419,8 +419,8 @@ public class MainPageWizardPage extends WizardPage {
 */			
 			if(getSeveralModels()){
 				if(lstSelectedModels.getItemCount()>0){
-					DevelopmentRate.definirParamsImage();
-					DevelopmentRate.proceesAllModelsNew(chkTmin.getSelection());
+					EpfaVirulence.definirParamsImage();
+					EpfaVirulence.proceesAllModelsNew(chkTmin.getSelection());
 					lstSelectedModels.removeAll();
 					return super.getWizard().getPage("SeveralModelsWizardPage");
 				}else
@@ -428,9 +428,9 @@ public class MainPageWizardPage extends WizardPage {
 			}else{
 				if(lstSelectedModels.getItemCount()>0){
 					OneModelWizardPage1.lblSelectedFunctionAlone.setText(lstSelectedModels.getItem(0));
-					DevelopmentRate.definirParamsImage();
-					DevelopmentRate.selectionModelOneByOneNew(DevelopmentRate.getModelNumber(lstSelectedModels.getItem(0)), chkTmin.getSelection());
-					OneModelWizardPage1.showParametersLabel(DevelopmentRate.getModelNumber(lstSelectedModels.getItem(0)));
+					EpfaVirulence.definirParamsImage();
+					EpfaVirulence.selectionModelOneByOneNew(EpfaVirulence.getModelNumber(lstSelectedModels.getItem(0)), chkTmin.getSelection());
+					OneModelWizardPage1.showParametersLabel(EpfaVirulence.getModelNumber(lstSelectedModels.getItem(0)));
 					return super.getWizard().getPage("OneModelWizardPage1");
 				}else
 					return super.getWizard().getPage("MainPageWizardPage");
@@ -518,10 +518,10 @@ public class MainPageWizardPage extends WizardPage {
 	
 	private boolean stageAlredySelected(){
 
-		new File(MainActionRate.pathProj + File.separator + DevelopmentRate.title + File.separator + stageSel).mkdir();
-		strMortalityPath = new File(MainActionRate.pathProj + File.separator + DevelopmentRate.title + File.separator + stageSel).getAbsolutePath().replace('\\', '/');
+		new File(MainActionEPFMort.pathProj + File.separator + EpfaVirulence.title + File.separator + stageSel).mkdir();
+		strMortalityPath = new File(MainActionEPFMort.pathProj + File.separator + EpfaVirulence.title + File.separator + stageSel).getAbsolutePath().replace('\\', '/');
 		
-		File fResume = new File(MainActionRate.pathProj + File.separator+ DevelopmentRate.title + File.separator +"resume.ilcym");
+		File fResume = new File(MainActionEPFMort.pathProj + File.separator+ EpfaVirulence.title + File.separator +"resume.ilcym");
 		
 		int intStageSel=0;
 		String strModel="";
@@ -553,22 +553,22 @@ public class MainPageWizardPage extends WizardPage {
 				titem.setText(new String[]{arrayPars[i].split("=")[0], df.format(Double.valueOf(arrayPars[i].split("=")[1]))});
 			}
 			
-			intModel = DevelopmentRate.getModelNumber(strModel);
+			intModel = EpfaVirulence.getModelNumber(strModel);
 			
-			SelectedModelWizardPage.lblImageSelected.setImage(new Image(Display.getCurrent(), strMortalityPath + File.separator + DevelopmentRate.imageName));
+			SelectedModelWizardPage.lblImageSelected.setImage(new Image(Display.getCurrent(), strMortalityPath + File.separator + EpfaVirulence.imageName));
 			SelectedModelWizardPage.lblImageFunction.setImage(ResourceManager.getPluginImage("org.cgiar.cip.ilcym.modelbuilder.development.rate", "images/model"+intModel+".bmp"));
-			SelectedModelWizardPage.bwrTextSelected.setUrl("file:///" + strMortalityPath + File.separator + DevelopmentRate.title + ".html");
+			SelectedModelWizardPage.bwrTextSelected.setUrl("file:///" + strMortalityPath + File.separator + EpfaVirulence.title + ".html");
 			SelectedModelWizardPage.lblModelSel.setText(strModel);
 			
 			
 			prop.clear();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			MessageDialog.openError(new Shell(), DevelopmentRate.title, "Problems while trying to load the resume file");
+			MessageDialog.openError(new Shell(), EpfaVirulence.title, "Problems while trying to load the resume file");
 			return false;
 		} catch (IOException e) {
 			e.printStackTrace();
-			MessageDialog.openError(new Shell(), DevelopmentRate.title, "Problems while trying to load the resume file");
+			MessageDialog.openError(new Shell(), EpfaVirulence.title, "Problems while trying to load the resume file");
 			return false;
 		}
 		return true;

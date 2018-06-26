@@ -127,6 +127,11 @@ public class NewProjectWizard extends Wizard implements INewWizard {
 				
 		File fileMappingPath = new File(fileP + File.separator + "Mapping");
 		fileMappingPath.mkdir();
+		
+		File fileAutodissPath = new File(fileP + File.separator + "AutoDissemination");
+		fileAutodissPath.mkdir();
+		
+		
 
 		
 		try {

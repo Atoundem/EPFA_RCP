@@ -11,8 +11,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.icipe.epfa.modeldesigner.DevelopmentRate;
-import org.icipe.epfa.modeldesigner.MainActionRate;
+import org.icipe.epfa.modeldesigner.EpfaVirulence;
+import org.icipe.epfa.modeldesigner.MainActionEPFMort;
 import org.icipe.epfa.classUtils.ArrayConvertions;
 import org.icipe.epfa.project.windows.ViewProjectsUI;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -178,9 +178,9 @@ public class SelectedModelWizardPage extends WizardPage {
 		btnResetModel.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-/*				boolean reset = MessageDialog.openConfirm(new Shell(), DevelopmentRate.title, "Are you sure you want to reset the model selected?");
+/*				boolean reset = MessageDialog.openConfirm(new Shell(), EpfaVirulence.title, "Are you sure you want to reset the model selected?");
 				if(reset){
-					File fResume = new File(MainActionRate.pathProj + File.separator+DevelopmentRate.title + File.separator +"resume.ilcym");
+					File fResume = new File(MainActionEPFMort.pathProj + File.separator+EpfaVirulence.title + File.separator +"resume.ilcym");
 					String numStages=ViewProjectsUI.getNumStage(MainPageWizardPage.getStageSel());
 					Properties prop = new Properties();
 					try {
@@ -192,7 +192,7 @@ public class SelectedModelWizardPage extends WizardPage {
 						prop.store(new FileOutputStream(fResume), "Development Rate Resume");
 						prop.clear();
 						
-						BufferedReader br = new BufferedReader(new FileReader(MainActionRate.pathProj + File.separator + "Progress.ilcym"));
+						BufferedReader br = new BufferedReader(new FileReader(MainActionEPFMort.pathProj + File.separator + "Progress.ilcym"));
 						String str="", str2="";
 						String[] temp;
 						while ((str = br.readLine()) != null) {
@@ -207,17 +207,17 @@ public class SelectedModelWizardPage extends WizardPage {
 
 						br.close();
 						
-						BufferedWriter bw = new BufferedWriter(new FileWriter(MainActionRate.pathProj + File.separator + "Progress.ilcym"));
+						BufferedWriter bw = new BufferedWriter(new FileWriter(MainActionEPFMort.pathProj + File.separator + "Progress.ilcym"));
 						bw.write(str2);
 						bw.close();
 						
 						MainPageWizardPage.bolModelSelected = false;
 						
 					} catch (FileNotFoundException e1) {
-						MessageDialog.openError(new Shell(), DevelopmentRate.title, "Problems while trying to reset the selected model");
+						MessageDialog.openError(new Shell(), EpfaVirulence.title, "Problems while trying to reset the selected model");
 						e1.printStackTrace();
 					} catch (IOException e1) {
-						MessageDialog.openError(new Shell(), DevelopmentRate.title, "Problems while trying to reset the selected model");
+						MessageDialog.openError(new Shell(), EpfaVirulence.title, "Problems while trying to reset the selected model");
 						e1.printStackTrace();
 					}
 				}*/
