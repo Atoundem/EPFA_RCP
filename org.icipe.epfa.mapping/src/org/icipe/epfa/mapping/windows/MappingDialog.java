@@ -63,10 +63,11 @@ public class MappingDialog extends Dialog {
 	 */
 	public Object open() {
 		
-		if(!Platform.getOS().equalsIgnoreCase("macosx")){
+/*		if(!Platform.getOS().equalsIgnoreCase("macosx")){
 			c = Rserve.launchRserve("",c);
 			System.out.println("Launched !!!!");
 		}
+		*/
 		createContents();
 		shlEpfMapping.open();
 		shlEpfMapping.layout();

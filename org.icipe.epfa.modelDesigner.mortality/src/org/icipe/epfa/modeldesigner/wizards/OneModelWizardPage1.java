@@ -1,6 +1,6 @@
 package org.icipe.epfa.modeldesigner.wizards;
 
-import org.icipe.epfa.modeldesigner.DevelopmentRate;
+import org.icipe.epfa.modeldesigner.EpfaVirulence;
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
@@ -280,19 +280,19 @@ public class OneModelWizardPage1 extends WizardPage {
 		btnReAdjust.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				DevelopmentRate.randomParameters();
+				EpfaVirulence.randomParameters();
 			}
 		});
 		btnSet.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				DevelopmentRate.setParameters();
+				EpfaVirulence.setParameters();
 			}
 		});
 		btnBack.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				DevelopmentRate.backParameters();
+				EpfaVirulence.backParameters();
 			}
 		});
 		
@@ -300,7 +300,7 @@ public class OneModelWizardPage1 extends WizardPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				if(!txtTminTempOne.getText().equalsIgnoreCase("") && !txtTminValueOne.getText().equalsIgnoreCase(""))
-				DevelopmentRate.spinnerListener(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
+				EpfaVirulence.spinnerListener(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
 						txtPar3.getText(), txtPar4.getText(), txtPar5.getText(), txtPar6.getText(), txtPar7.getText(), chkTmin.getSelection());
 			}
 		});
@@ -315,7 +315,7 @@ public class OneModelWizardPage1 extends WizardPage {
 				}else{
 					txtTminTempOne.setEditable(false);
 					txtTminValueOne.setEditable(false);
-					DevelopmentRate.spinnerListener(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
+					EpfaVirulence.spinnerListener(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
 							txtPar3.getText(), txtPar4.getText(), txtPar5.getText(), txtPar6.getText(), txtPar7.getText(), chkTmin.getSelection());
 				}
 			}
@@ -325,7 +325,7 @@ public class OneModelWizardPage1 extends WizardPage {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.keyCode == 13 || e.keyCode == 16777296)
-					DevelopmentRate.spinnerListener(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
+					EpfaVirulence.spinnerListener(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
 							txtPar3.getText(), txtPar4.getText(), txtPar5.getText(), txtPar6.getText(), txtPar7.getText(), chkTmin.getSelection()/*, chkTmax.getSelection()*/);
 			}
 		});
@@ -333,7 +333,7 @@ public class OneModelWizardPage1 extends WizardPage {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.keyCode == 13 || e.keyCode == 16777296)
-					DevelopmentRate.spinnerListener(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
+					EpfaVirulence.spinnerListener(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
 							txtPar3.getText(), txtPar4.getText(), txtPar5.getText(), txtPar6.getText(), txtPar7.getText(), chkTmin.getSelection()/*, chkTmax.getSelection()*/);
 			}
 		});
@@ -341,7 +341,7 @@ public class OneModelWizardPage1 extends WizardPage {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.keyCode == 13 || e.keyCode == 16777296)
-					DevelopmentRate.spinnerListener(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
+					EpfaVirulence.spinnerListener(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
 							txtPar3.getText(), txtPar4.getText(), txtPar5.getText(), txtPar6.getText(), txtPar7.getText(), chkTmin.getSelection()/*, chkTmax.getSelection()*/);
 			}
 		});
@@ -349,7 +349,7 @@ public class OneModelWizardPage1 extends WizardPage {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.keyCode == 13 || e.keyCode == 16777296)
-					DevelopmentRate.spinnerListener(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
+					EpfaVirulence.spinnerListener(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
 							txtPar3.getText(), txtPar4.getText(), txtPar5.getText(), txtPar6.getText(), txtPar7.getText(), chkTmin.getSelection()/*, chkTmax.getSelection()*/);
 			}
 		});
@@ -357,7 +357,7 @@ public class OneModelWizardPage1 extends WizardPage {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.keyCode == 13 || e.keyCode == 16777296)
-					DevelopmentRate.spinnerListener(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
+					EpfaVirulence.spinnerListener(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
 							txtPar3.getText(), txtPar4.getText(), txtPar5.getText(), txtPar6.getText(), txtPar7.getText(), chkTmin.getSelection()/*, chkTmax.getSelection()*/);
 			}
 		});
@@ -365,7 +365,7 @@ public class OneModelWizardPage1 extends WizardPage {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.keyCode == 13 || e.keyCode == 16777296)
-					DevelopmentRate.spinnerListener(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
+					EpfaVirulence.spinnerListener(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
 							txtPar3.getText(), txtPar4.getText(), txtPar5.getText(), txtPar6.getText(), txtPar7.getText(), chkTmin.getSelection()/*, chkTmax.getSelection()*/);
 			}
 		});
@@ -373,7 +373,7 @@ public class OneModelWizardPage1 extends WizardPage {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.keyCode == 13 || e.keyCode == 16777296)
-					DevelopmentRate.spinnerListener(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
+					EpfaVirulence.spinnerListener(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(),
 							txtPar3.getText(), txtPar4.getText(), txtPar5.getText(), txtPar6.getText(), txtPar7.getText(), chkTmin.getSelection()/*, chkTmax.getSelection()*/);
 			}
 		});
@@ -2143,7 +2143,7 @@ public class OneModelWizardPage1 extends WizardPage {
 	
 	@Override
 	public IWizardPage getNextPage() {
-		DevelopmentRate.setModelSelectedOne(DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(), txtPar3.getText(), txtPar4.getText(),
+		EpfaVirulence.setModelSelectedOne(EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)), txtPar1.getText(), txtPar2.getText(), txtPar3.getText(), txtPar4.getText(),
 				txtPar5.getText(), txtPar6.getText(), txtPar7.getText());
 		return super.getWizard().getPage("OneModelWizardPage2");
 	}

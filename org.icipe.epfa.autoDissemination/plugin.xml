@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="org.icipe.epfa.autoDissemination.actionSetAutodissemination"
+            label="Auto Dissemination">
+         <menu
+               id="autoDisseminationMenu"
+               label="Model AutoDissemination">
+         </menu>
+         <action
+               class="org.icipe.epfa.autodissemination.ActionLoadPlotAutodisseminationData"
+               icon="icons/loadPlot-16.png"
+               id="org.icipe.epfa.autoDissemination.action.action1"
+               label="Load&amp;Plot Field Data"
+               menubarPath="autoDisseminationMenu/additions"
+               style="push"
+               toolbarPath="window/addition"
+               tooltip="Load/Plot Autodissemination Data">
+         </action>
+         <action
+               class="org.icipe.epfa.autodissemination.ActionAutodisseminationDesign"
+               icon="icons/Autodiss-16.png"
+               id="org.icipe.epfa.autoDissemination.action2"
+               label="AutoDissemination Design"
+               menubarPath="autoDisseminationMenu/additions"
+               style="push"
+               toolbarPath="window/addition"
+               tooltip="AutoDissemination Design">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>

@@ -34,37 +34,27 @@ public class GenerateMap
 		   douValue = -180;
 		   
 		   String pathDatas  = (pathData).replace("\\","/");
-//		   pathData = pathData +"/";
-//		   try {
-		//		c=new RConnection();
-				//c = EPF.getConnection();
-				if (c == null || !c.isConnected())
-					if(!Platform.getOS().equalsIgnoreCase("macosx")){
-						c = Rserve.launchRserve("",c);
-						System.out.println("Launched !!!!!!!!!!!");
-					}
-					//c= new RConnection();
-/*				System.out.println("Connect!");
-			} catch (RserveException e2) {
-				do{
-					try {
-						c = new RConnection();
-					} catch (RserveException e) {
-						e.printStackTrace();
-					}
-				}while (c == null || !c.isConnected());
+//c=new RConnection();
+		//c = EPF.getConnection();
+		if (c == null || !c.isConnected())
+			if(!Platform.getOS().equalsIgnoreCase("macosx")){
+				c = Rserve.launchRserve("",c);
+				System.out.println("Launched !!!!!!!!!!!");
 			}
-*/		   
+			//c= new RConnection();
+		System.out.println("Connect!");
+		   
 		   try {
 			
 			savetoR += "library(MASS)"+"\r\n";
 			c.eval("library(MASS)");
-		
-		   c.eval("library(sp)");
-		   c.eval("library(maptools)");
-		   c.eval("library(rgdal)");
+			c.eval("library(sp)");
+			   c.eval("library(rgdal)");
+			
+			c.eval("library(maptools)");		   
 		   c.eval("library(maps)");
 		   c.eval("library(doRNG)");
+		   
 		   
 		   		   
 		   savetoR += "archivos1=list.files('"+pathDatas+"',pattern='flt');archivos1=paste('"+pathDatas+"','/',archivos1,sep='')"+"\r\n";	
@@ -215,8 +205,12 @@ public class GenerateMap
     		savetoR += "source('"+MainPageWizardPage.getstrMortalityPath()+"/tempScripFile.r'"+")"+"\r\n";	
     		c.eval("source('"+MainPageWizardPage.getstrMortalityPath()+"/tempScripFile.r'"+")");
 */	           
-    		savetoR += "source('"+ViewProjectsUI.getPathMortality()+"/tempScripFile.r'"+")"+"\r\n";	
-    		c.eval("source('"+ViewProjectsUI.getPathMortality()+"/tempScripFile.r'"+")");
+	           
+    		savetoR += "source('"+(ViewProjectsUI.getPathProject()+ File.separator).replace('\\','/') +"tempScripFile.r'"+")"+"\r\n";
+	        c.eval("source('"+(ViewProjectsUI.getPathProject()+ File.separator).replace('\\','/')+"tempScripFile.r'"+")");
+
+ //   		savetoR += "source('"+ViewProjectsUI.getPathMortality()+"/tempScripFile.r'"+")"+"\r\n";	
+ //   		c.eval("source('"+ViewProjectsUI.getPathMortality()+"/tempScripFile.r'"+")");
     		
 //	        savetoR += "source('"+MainPageWizardPage.getstrMortalityPath()+"tempScripFile.r'"+")"+"\r\n";	
 //	        c.eval("source('"+MainPageWizardPage.getstrMortalityPath()+"tempScripFile.r'"+")");
@@ -229,8 +223,8 @@ public class GenerateMap
 			c.eval("load("+ '"' + MainPageWizardPage.getstrMortalityPath() + "/" + "EPFA_"+"Mortality.RData"+'"'+")");
 */			
 			
-			savetoR +="load("+ '"' +ViewProjectsUI.getPathMortality() + "/" + "EPFA_"+"Mortality.RData"+'"'+")"+"\n";
-			c.eval("load("+ '"' + ViewProjectsUI.getPathMortality() + "/" + "EPFA_"+"Mortality.RData"+'"'+")");
+			savetoR +="load("+ '"' +ViewProjectsUI.getPathMortality() + "EPFA_"+"Mortality.RData"+'"'+")"+"\n";
+			c.eval("load("+ '"' + ViewProjectsUI.getPathMortality() + "EPFA_"+"Mortality.RData"+'"'+")");
 			
 			System.out.println("Rdata load!");
 			
@@ -327,8 +321,11 @@ public class GenerateMap
 			//savetoR = "source('" + lib + "/spatialTransform.r')" + "\n";
 			//c.eval("source('" + lib + "/spatialTransform.r')");
 			
-			savetoR += "source('"+ViewProjectsUI.getPathMortality()+"tempScripFile.r'"+")"+"\r\n";	
-		    c.eval("source('"+ViewProjectsUI.getPathMortality()+"tempScripFile.r'"+")");
+			savetoR += "source('"+(ViewProjectsUI.getPathProject()+ File.separator).replace('\\','/') +"tempScripFile.r'"+")"+"\r\n";
+	        c.eval("source('"+(ViewProjectsUI.getPathProject()+ File.separator).replace('\\','/')+"tempScripFile.r'"+")");
+			
+//			savetoR += "source('"+ViewProjectsUI.getPathMortality()+"tempScripFile.r'"+")"+"\r\n";	
+//		    c.eval("source('"+ViewProjectsUI.getPathMortality()+"tempScripFile.r'"+")");
 			
 			System.out.println("RE Scrip load!");
 			savetoR += "dir.out=" + '"'+ strPath + '/'+'"'+"\n";

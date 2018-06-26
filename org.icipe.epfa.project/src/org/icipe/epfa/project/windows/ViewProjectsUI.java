@@ -28,7 +28,7 @@ public class ViewProjectsUI extends ViewPart {
 	
 	private static Tree tree;
 	private static Image fileIm, dir, imgIcon, txtIcon;
-	public static String pathProject, nameProject, pathMortality, pathMapping;
+	public static String pathProject, nameProject, pathMortality, pathMapping,pathAutoDiss;
 	
 	
 	
@@ -93,10 +93,14 @@ public class ViewProjectsUI extends ViewPart {
 		        nameProject = ti.getText();
 		        pathMortality = (pathProject + File.separator + "Mortality"+ File.separator).replace('\\', '/');
 		        pathMapping = (pathProject + File.separator + "Mapping"+ File.separator).replace('\\', '/');
+		        pathAutoDiss = (pathProject + File.separator + "AutoDissemination"+ File.separator).replace('\\', '/');
+
 		        
 		        System.out.println(pathProject);
 		        System.out.println(pathMortality);
 		        System.out.println(pathMapping);
+		        System.out.println(pathAutoDiss);
+		        
 			}
 		});
 		
@@ -386,6 +390,14 @@ public class ViewProjectsUI extends ViewPart {
 
 	public static void setPathMapping(String pathMapping) {
 		ViewProjectsUI.pathMapping = pathMapping;
+	}
+
+	public static String getPathAutoDiss() {
+		return pathAutoDiss;
+	}
+
+	public static void setPathAutoDiss(String pathAutoDiss) {
+		ViewProjectsUI.pathAutoDiss = pathAutoDiss;
 	}
 
 	

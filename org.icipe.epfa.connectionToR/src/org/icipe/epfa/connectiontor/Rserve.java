@@ -146,7 +146,7 @@ public class Rserve {
 		
 		String state = table.getItem(intItem).getText(1);
 		switch (intItem) {
-		case 0:/** R 2.15.1 **/
+		case 0:/**R-3.2.3 **/
 			if(state.equalsIgnoreCase("Installed")){
 				MessageDialog.openInformation(new Shell(), "System Requirements", "R-3.2.3 is alredy installed.");
 				return;
@@ -203,43 +203,57 @@ public class Rserve {
 			
 			strPath = (strPath + File.separator+ "R" + File.separator).replace("\\", "/");
 			try {
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "MASS_7.3-49.zip" + '"' + ",repos=NULL, contriburl=NULL)");
 				c.eval("install.packages(pkgs=" + '"' + strPath +  "minpack.lm_1.2-1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "R2HTML_2.2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "sp_0.9-99.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "epiR_0.9-43.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "maps_2.2-6.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "rgdal_0.7-16.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "maptools_0.8-16.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "rgl_0.92.892.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "raster_2.0-08.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "RColorBrewer_1.0-5.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "shapefiles_0.6.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "iterators_1.0.6.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "foreach_1.4.0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "digest_0.5.2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "stringr_0.6.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "xtable_1.7-0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "pkgmaker_0.8.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "plyr_1.7.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "doRNG_1.4.5.zip" + '"' + ",repos=NULL, contriburl=NULL)");
 				
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "mda_0.4-2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "fields_6.7.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "spam_0.29-2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "ggplot2_0.9.2.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "gtable_0.1.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "memoise_0.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "proto_0.3-9.2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "reshape2_1.2.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "scales_0.2.2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "munsell_0.4.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "colorspace_1.2-0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "dichromat_1.2-4.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "labeling_0.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "RODBC_1.3-6.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "plotGoogleMaps_1.3.zip" + '"' + ",repos=NULL, contriburl=NULL)");
-				c.eval("install.packages(pkgs=" + '"' + strPath +  "rgeos_0.2-9.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "DBI_0.5-1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "assertthat_0.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "R6_2.2.0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "Rcpp_0.12.9.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "tibble_1.2.zip" + '"' + ",repos=NULL, contriburl=NULL)");				
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "lazyeval_0.2.0.zip" + '"' + ",repos=NULL, contriburl=NULL)");				
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "dplyr_0.5.0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				
+			//	c.eval("install.packages(pkgs=" + '"' + strPath +  "MASS_7.3-49.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "R2HTML_2.3.2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "sp_1.2-4.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "epiR_0.9-79.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "maps_3.1.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "rgdal_0.8-9.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "maptools_0.8-41.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "rgl_0.97.0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "raster_2.5-8.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "RColorBrewer_1.1-2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "shapefiles_0.7.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "iterators_1.0.8.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "foreach_1.4.3.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "digest_0.6.12.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "stringr_1.1.0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "xtable_1.8-2.zip" + '"' + ",repos=NULL, contriburl=NULL)");				
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "registry_0.3.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "stringi_1.1.2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "magrittr_1.5.zip" + '"' + ",repos=NULL, contriburl=NULL)");				
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "pkgmaker_0.22.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "rngtools_1.2.4.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "plyr_1.8.4.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "doRNG_1.6.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "mda_0.4-9.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "fields_8.10.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "spam_1.4-0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "ggplot2_2.2.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "gtable_0.2.0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "memoise_1.0.0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "proto_1.0.0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "reshape2_1.4.2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "scales_0.4.1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "munsell_0.4.3.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "colorspace_1.3-2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "dichromat_2.0-0.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "labeling_0.3.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "RODBC_1.3-14.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "plotGoogleMaps_2.2.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+				c.eval("install.packages(pkgs=" + '"' + strPath +  "rgeos_0.3-22.zip" + '"' + ",repos=NULL, contriburl=NULL)");
 				
 				
 				

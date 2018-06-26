@@ -2,7 +2,7 @@
 <feature
       id="org.icipe.epfa.project_fest"
       label="Project"
-      version="1.0.0"
+      version="1.0.0.qualifier"
       provider-name="ICIPE">
 
    <description url="http://www.example.com/description">
@@ -18,14 +18,14 @@
    </license>
 
    <plugin
-         id="org.icipe.epfa.project"
+         id="org.icipe.epfa.connectionToR"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.icipe.epfa.connectionToR"
+         id="org.icipe.epfa.project"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -141,7 +141,7 @@ public class Sharpe1UI extends Dialog {
 		});
 		restoreImgMenuItem.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				DevelopmentRate.restoreImage(stageSel, path, lblFunctImageDR, model);
+				EpfaVirulence.restoreImage(stageSel, path, lblFunctImageDR, model);
 			}
 		});
 		copyMenuItem.addSelectionListener(new SelectionAdapter() {
@@ -159,7 +159,7 @@ public class Sharpe1UI extends Dialog {
 						"Are you sure to choose this function: "+shell.getText());
 				
 				if(finish)
-					DevelopmentRate.setModelSelected(model);
+					EpfaVirulence.setModelSelected(model);
 				
 			}
 		});

@@ -5,7 +5,7 @@ package org.icipe.epfa.modeldesigner.wizards;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-import org.icipe.epfa.modeldesigner.DevelopmentRate;
+import org.icipe.epfa.modeldesigner.EpfaVirulence;
 import org.icipe.epfa.modeldesigner.ImageProperties;
 import org.icipe.epfa.modeldesigner.ModifyImageUI;
 import org.icipe.epfa.classUtils.EPFAUtils;
@@ -119,9 +119,9 @@ public class OneModelWizardPage2 extends WizardPage {
 		propImgMenuItem.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
 				ModifyImageUI ui = new ModifyImageUI(container.getShell());
-				ui.model = (DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)));
+				ui.model = (EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0)));
 				ImageProperties ip = ModifyImageUI.ip;
-				ui.ModifyImageUIVar(MainPageWizardPage.getstrMortalityPath() + File.separator + DevelopmentRate.imageName, lblImageFinal,
+				ui.ModifyImageUIVar(MainPageWizardPage.getstrMortalityPath() + File.separator + EpfaVirulence.imageName, lblImageFinal,
 						ip.getCorrX1(),ip.getCorrX2(),ip.getCorrY1(),ip.getCorrY2(),ip.getMini(),
 						ip.getMaxi(), ip.getLabX(),ip.getLabY(),ip.getTitle(),ip.getLegX(),ip.getLegY(), ip.getScaleY(), ip.getScaleX());
 				ui.open();
@@ -129,12 +129,12 @@ public class OneModelWizardPage2 extends WizardPage {
 		});
 		restoreImgMenuItem.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				DevelopmentRate.restoreImage(MainPageWizardPage.getStageSel(), MainPageWizardPage.getstrMortalityPath() + File.separator + DevelopmentRate.imageName, lblImageFinal, (DevelopmentRate.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0))));
+				EpfaVirulence.restoreImage(MainPageWizardPage.getStageSel(), MainPageWizardPage.getstrMortalityPath() + File.separator + EpfaVirulence.imageName, lblImageFinal, (EpfaVirulence.getModelNumber(MainPageWizardPage.lstSelectedModels.getItem(0))));
 			}
 		});
 		copyMenuItem.addSelectionListener(new SelectionAdapter() {
 			public void widgetSelected(SelectionEvent e) {
-				BufferedImage image = EPFAUtils.convertToAWT(new ImageData(MainPageWizardPage.getstrMortalityPath() + "/" + DevelopmentRate.imageName));
+				BufferedImage image = EPFAUtils.convertToAWT(new ImageData(MainPageWizardPage.getstrMortalityPath() + "/" + EpfaVirulence.imageName));
 				ImageSelection.copyImageToClipboard(image);
 			}
 		});

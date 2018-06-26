@@ -27,6 +27,12 @@
             id="org.icipe.epfa.modelBuilderPerspective"
             name="Model Designer Perspective">
       </perspective>
+      <perspective
+            class="org.icipe.epfa.autoDissemination.AutoDisseminationPerspectiveFactory"
+            icon="icons/Autodiss-16.png"
+            id="org.icipe.epfa.AutoDisseminationPerspective"
+            name="AutoDissemination Perspective">
+      </perspective>
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
@@ -52,6 +58,20 @@
             targetID="org.icipe.epfa.modelBuilderPerspective">
          <actionSet
                id="org.icipe.epfa.modelDesigner.actionSetModelDesign">
+         </actionSet>
+         <view
+               id="org.icipe.epfa.project.view1"
+               minimized="false"
+               ratio="0.25"
+               relationship="left"
+               relative="org.eclipse.ui.editorss"
+               visible="true">
+         </view>
+      </perspectiveExtension>
+      <perspectiveExtension
+            targetID="org.icipe.epfa.AutoDisseminationPerspective">
+         <actionSet
+               id="org.icipe.epfa.autoDissemination.actionSetAutodissemination">
          </actionSet>
          <view
                id="org.icipe.epfa.project.view1"
@@ -95,7 +115,7 @@
          </property>
          <property
                name="startupProgressRect"
-               value="0,271,500,25">
+               value="5,271,500,25">
          </property>
          <property
                name="preferenceCustomization"

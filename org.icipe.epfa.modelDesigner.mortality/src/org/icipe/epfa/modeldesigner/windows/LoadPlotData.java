@@ -315,20 +315,23 @@ public class LoadPlotData extends Dialog {
 		           System.out.println(scriptPath);
 */		           
 //   Original bloc code for reading the script
+		            
 		           EPFAUtils.createTempScriptFile("/RScripts/mortalityDesigner_New.r");
-		           c.eval("install.packages(pkgs=" + '"' + "I:/Eclipsssss Test/Requirements/R/" +  "minpack.lm_1.2-1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
+	//	           c.eval("install.packages(pkgs=" + '"' + "I:/Eclipsssss Test/Requirements/R/" +  "minpack.lm_1.2-1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
 		           
-		           saveToR += "source('"+MainPageWizardPage.getstrMortalityPath()+"/tempScripFile.r'"+")"+"\r\n";	
-		           saveToR += "source('"+ViewProjectsUI.getPathProject().replace('\\','/') +"/tempScripFile.r'"+")"+"\r\n";
+	//	           saveToR += "source('"+MainPageWizardPage.getstrMortalityPath()+"/tempScripFile.r'"+")"+"\r\n";	
+	//	           saveToR += "source('"+ViewProjectsUI.getPathProject().replace('\\','/') +"/tempScripFile.r'"+")"+"\r\n";
 		           saveToR += "source('"+(ViewProjectsUI.getPathProject()+ File.separator).replace('\\','/') +"tempScripFile.r'"+")"+"\r\n";
+		           
+		           c.eval("library(minpack.lm)");	
+		           c.eval("library(MASS)");
 		           
 		           c.eval("source('"+(ViewProjectsUI.getPathProject()+ File.separator).replace('\\','/')+"tempScripFile.r'"+")");
 	//	           c.eval("install.packages(pkgs=" + '"' + "I:/Eclipsssss Test/Requirements/R/" +  "MASS_7.3-49.zip" + '"' + ",repos=NULL, contriburl=NULL)");
 	//	           c.eval("install.packages(pkgs=" + '"' + "I:/Eclipsssss Test/Requirements/R/" +  "minpack.lm_1.2-1.zip" + '"' + ",repos=NULL, contriburl=NULL)");
 
 		           
-	//	           c.eval("library(minpack.lm)");	
-		           c.eval("library(MASS)");
+		          
 	//	           c.eval("source('"+"I:/other/".replace('\\','/')+"tempScripFile.r'"+")");
 		           
 		           		           

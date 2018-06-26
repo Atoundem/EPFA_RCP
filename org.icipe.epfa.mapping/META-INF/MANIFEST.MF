@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Mapping
 Bundle-SymbolicName: org.icipe.epfa.mapping;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.icipe.epfa.mapping.Activator
 Bundle-Vendor: ICIPE
 Require-Bundle: org.eclipse.ui,
